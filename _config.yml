@@ -1,0 +1,6 @@
+title: WindBorne
+description: Application answers from Stephen Behunin
+markdown: kramdown
+kramdown:
+  syntax_highlighter: rouge
+# No remote theme — pages use the custom dark layout in _layouts/default.html
