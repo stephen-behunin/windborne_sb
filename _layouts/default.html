@@ -1,1 +1,240 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{ page.title }} — Stephen Behunin</title>
+<meta name="description" content="{{ site.description }}">
+<meta name="color-scheme" content="dark">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #e6e7e9;
+    --ink-soft: #94979d;
+    --line: #2b2d31;
+    --accent: #aeb4bd;
+    --bg: #17181a;
+    --bg-soft: #1f2023;
+    --bg-card: #1b1c1f;
+    --white: #f4f5f6;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    color: var(--ink);
+    background: var(--bg);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+  ::selection { background: rgba(244, 245, 246, 0.2); }
+  .wrap {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 24px 80px;
+  }
+  .site-nav {
+    padding: 28px 0;
+    border-bottom: 1px solid var(--line);
+    margin-bottom: 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .site-nav .brand {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    text-decoration: none;
+  }
+  .site-nav .brand:hover { color: var(--white); }
+  .content h1 {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 1.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.01em;
+    color: var(--white);
+    line-height: 1.2;
+    margin-bottom: 20px;
+  }
+  .content h2 {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--white);
+    margin: 44px 0 14px;
+    padding-top: 28px;
+    border-top: 1px solid var(--line);
+  }
+  .content h3 {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--ink-soft);
+    margin: 30px 0 10px;
+  }
+  .content p { margin-bottom: 16px; }
+  .content a { color: #b9c6e4; text-decoration-color: var(--line); }
+  .content a:hover { color: var(--white); }
+  .content ul, .content ol { margin: 0 0 16px 24px; }
+  .content li { margin-bottom: 6px; }
+  .content strong { color: var(--white); }
+  .content blockquote {
+    border-left: 2px solid var(--accent);
+    padding: 4px 0 4px 18px;
+    margin: 0 0 16px;
+    color: var(--ink-soft);
+  }
+  .content img {
+    max-width: 100%;
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    margin: 8px 0 20px;
+    display: block;
+  }
+  .content code {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.86em;
+    background: var(--bg-soft);
+    border: 1px solid var(--line);
+    border-radius: 3px;
+    padding: 1px 6px;
+  }
+  .content pre {
+    background: var(--bg-card);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 16px 18px;
+    overflow-x: auto;
+    margin: 0 0 20px;
+    line-height: 1.55;
+  }
+  .content pre code {
+    background: none;
+    border: none;
+    padding: 0;
+    font-size: 0.84rem;
+  }
+  .content table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 0 0 20px;
+    font-size: 0.92rem;
+  }
+  .content th {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--ink-soft);
+    text-align: left;
+  }
+  .content th, .content td {
+    border: 1px solid var(--line);
+    padding: 9px 12px;
+  }
+  .content tr:nth-child(even) td { background: var(--bg-card); }
+  .content hr { border: none; border-top: 1px solid var(--line); margin: 32px 0; }
+  /* Collapsible sections */
+  .content details {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: var(--bg-card);
+    margin: 0 0 14px;
+  }
+  .content details summary {
+    list-style: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 18px 20px;
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--white);
+    user-select: none;
+    transition: background 0.15s ease;
+  }
+  .content details summary::-webkit-details-marker { display: none; }
+  .content details summary::before {
+    content: "+";
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--ink-soft);
+    width: 22px;
+    height: 22px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--line);
+    border-radius: 3px;
+    flex-shrink: 0;
+    transition: transform 0.2s ease, color 0.15s ease, border-color 0.15s ease;
+  }
+  .content details summary:hover { background: var(--bg-soft); }
+  .content details summary:hover::before { color: var(--white); border-color: var(--accent); }
+  .content details[open] summary {
+    border-bottom: 1px solid var(--line);
+  }
+  .content details[open] summary::before {
+    content: "\2013";
+  }
+  .content details .details-body,
+  .content details > *:not(summary) {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  .content details > p:first-of-type { margin-top: 18px; }
+  .content details > *:last-child { margin-bottom: 18px; }
+  /* Rouge syntax highlighting (dark) */
+  .highlight .c, .highlight .c1, .highlight .cm { color: #6b7280; font-style: italic; }
+  .highlight .k, .highlight .kd, .highlight .kn { color: #b9c6e4; }
+  .highlight .s, .highlight .s1, .highlight .s2 { color: #a8c0a0; }
+  .highlight .mi, .highlight .mf { color: #d6b88a; }
+  .highlight .nf, .highlight .nc { color: #e6e7e9; }
+  .highlight .o, .highlight .p { color: #94979d; }
+  footer.site-footer {
+    margin-top: 64px;
+    padding-top: 28px;
+    border-top: 1px solid var(--line);
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    color: var(--ink-soft);
+  }
+  footer.site-footer a { color: var(--ink-soft); }
+  footer.site-footer a:hover { color: var(--white); }
+  @media (max-width: 480px) {
+    .content h1 { font-size: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav class="site-nav">
+    <a class="brand" href="https://stephen-behunin.github.io">&larr; Stephen Behunin</a>
+    <span class="brand" style="pointer-events:none">{{ site.title }}</span>
+  </nav>
+  <main class="content">
+    {{ content }}
+  </main>
+  <footer class="site-footer">
+    <p>&copy; 2026 Stephen Behunin &middot; <a href="mailto:stephenbehuninwork@gmail.com">stephenbehuninwork@gmail.com</a></p>
+  </footer>
+</div>
+</body>
+</html>
