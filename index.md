@@ -56,7 +56,7 @@ Second, the creativity is off the charts. A cat named Princess Donut the Queen A
 
 Finally, the writing is funny while having deep themes and connections between the books. Chekhov's guns and callbacks are everywhere. Themes stay persistent and are reinforced in poignant moments amid the gore, hilarious imagery, and utter absurdity. Character arcs and story throughlines are both baked into the structure of the world and carefully used for real moments of connection with the characters. I think how funny the situations are allows the author to get away with absurdity and deep meaning in shockingly close proximity to each other — and in ways that wouldn't play with any other type of story.
 
-So, in short, I love *Dungeon Crawler Carl*. I only have three and a half books left before I will have to join the legion of other fans waiting for the next installment. I may have to start rationing pages. The next one doesn't come out until late 2027 to early 2028. Goddammit Dinniman, write faster.
+So, in short, I love *Dungeon Crawler Carl*. I only have three and a half books left before I will have to join the legion of other fans waiting for the next installment. I may have to start rationing pages; the next one doesn't come out until late 2027 to early 2028. Goddammit Dinniman, write faster.
 
 </details>
 
