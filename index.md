@@ -5,7 +5,7 @@ title: WindBorne
 
 # WindBorne
 
-> Challenge answers from Stephen Behunin applying for Forward Deployed Operator.
+> Challenge answers from Stephen Behunin applying for Mission Operations Specialist.
 
 <details markdown="1">
 <summary>Semantle Strategy</summary>
